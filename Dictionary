@@ -1,0 +1,44 @@
+dictionary = {}
+while True:
+    print("\nMini Dictionary App\n")
+    print("1.Add/Update")
+    print("2.Retreive a word's definition")
+    print("3.Delete a word")
+    print("4.View all words")
+    print("5.Exit\n")
+
+    choice = int(input(" Choose an option between 1 to 5: "))
+    if choice == 1:
+        word = input("Enter the word:").strip()
+        definition = input("Enter the definition:").strip()
+        dictionary[word] = definition
+        print(f"Word'{word}' added/updated successfully!")
+
+    elif choice == 2:
+        word = input("Enter the word retreive:").strip()
+        if word in dictionary :
+            print(f"{word}: {dictionary[word]}")
+        else :
+            print(f"The word '{word}' is not in the dictionary.")
+
+    elif choice == 3:
+        word = input("Enter the word to delete:").strip()
+        if word in dictionary :
+            del dictionary[word]
+            print(f"The word '{word}' has been deleted successfully!")
+        else :
+            print(f"The word '{word}' is not in the dictionary.")
+
+    elif choice == 4:
+        if dictionary : 
+            print(f"\n words in the dictionary")
+            for word in dictionary:
+                print(f"{word} : {dictionary[word]}")
+        else :
+            print(f"There are no words in the dictionary.")
+
+    elif choice == 5:
+        print("Exiting the mini dictionary app . Goodbye!")
+        break
+    else :
+        print(f"Invakid choice")
